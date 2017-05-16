@@ -1,3 +1,5 @@
+package br.com.javatar.util;
+
 import com.google.common.collect.Lists;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
