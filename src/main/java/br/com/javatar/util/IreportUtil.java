@@ -10,9 +10,9 @@ import java.util.Map;
 
 public class IreportUtil {
 
-    public byte[] printReport(String fileName) throws JRException {
+    public static byte[] printReport(String fileName) throws JRException {
 
-        JasperReport jasperReport = (JasperReport) JRLoader.loadObject(getClass().getResourceAsStream(fileName));
+        JasperReport jasperReport = (JasperReport) JRLoader.loadObject(IreportUtil.class.getResourceAsStream(fileName));
 
         Map<String, Object> parameters = new HashMap<>();
 
