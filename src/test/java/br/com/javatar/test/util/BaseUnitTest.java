@@ -11,9 +11,9 @@ import static br.com.six2six.fixturefactory.loader.FixtureFactoryLoader.loadTemp
 
 public abstract class BaseUnitTest {
 
-    public static final String LABEL_VALIDO = "valido";
-    public static final String BASE_PACKAGE_TEMPLATE_FIXTURE_FACTORY = "br.com.bluesoft.fixture.template";
-    private static boolean hasLoadTemplateFixtureFactory = false;
+    public  final String LABEL_VALIDO = "valido";
+    public  final static String BASE_PACKAGE_TEMPLATE_FIXTURE_FACTORY = "br.com.javatar";
+    private boolean hasLoadTemplateFixtureFactory = false;
 
     @Rule
     public ExpectedException expectedEx = ExpectedException.none();
@@ -23,30 +23,30 @@ public abstract class BaseUnitTest {
         expectedEx.expectMessage(message);
     }
 
-    public <T> T getFixture(Class<T> clazz) {
-        return this.getFixture(LABEL_VALIDO, clazz);
+    public  <T> T getFixture(Class<T> clazz) {
+        return getFixture(LABEL_VALIDO, clazz);
     }
 
-    public <T> T getFixture(Class<T> clazz, String label) {
+    public  <T> T getFixture(Class<T> clazz, String label) {
         return getFixture(label, clazz);
     }
 
-    public <T> T getFixture(String label, Class<T> clazz) {
+    public  <T> T getFixture(String label, Class<T> clazz) {
         return getFixture(0, label, clazz).get(0);
     }
 
-    public <T> T getFixture(Class<T> clazz, String label, br.com.six2six.fixturefactory.Rule rule) {
+    public  <T> T getFixture(Class<T> clazz, String label, br.com.six2six.fixturefactory.Rule rule) {
         return getFixture(0, label, clazz, rule).get(0);
     }
 
-    public <T> List<T>  getFixture(Class<T> clazz, int size, String label) {
+    public  <T> List<T>  getFixture(Class<T> clazz, int size, String label) {
         return getFixture(size, label, clazz);
     }
 
-    public <T> List<T>  getFixture(int size, String label, Class<T> clazz) {
+    public  <T> List<T> getFixture(int size, String label, Class<T> clazz) {
         return getFixture(size, label, clazz, null);
     }
-    public <T> List<T>  getFixture(int size, String label, Class<T> clazz, br.com.six2six.fixturefactory.Rule rule) {
+    public  <T> List<T>  getFixture(int size, String label, Class<T> clazz, br.com.six2six.fixturefactory.Rule rule) {
         if (!hasLoadTemplateFixtureFactory){
             loadTemplates(BASE_PACKAGE_TEMPLATE_FIXTURE_FACTORY);
             hasLoadTemplateFixtureFactory = true;

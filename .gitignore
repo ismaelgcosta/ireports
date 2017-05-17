@@ -1,3 +1,7 @@
 /.idea/
 /target
 /ireport.iml
+/ireport-examples.iml
+/.classpath
+/.project
+/.settings

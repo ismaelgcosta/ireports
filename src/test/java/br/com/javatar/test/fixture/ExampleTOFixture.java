@@ -27,7 +27,7 @@ public class ExampleTOFixture implements TemplateLoader {
         loader.addTemplate(VALIDO, new Rule() {{
             add("numeroOrdem", sequence(Long.class));
             add("numeroRegistro", random(Long.class));
-            add("valor", random(BigDecimal.class));
+            add("valor", random(BigDecimal.class, range(BigDecimal.ONE, BigDecimal.TEN)));
             add("dataEmissao", randomDate("01/01/2015", "31/01/2015", new SimpleDateFormat("dd/MM/yyyy")));
             add("dataVencimento", randomDate("01/02/2015", "28/02/2015", new SimpleDateFormat("dd/MM/yyyy")));
             add("dataQuitacao", random(DateUtils.addDays(new Date(), 2), null));

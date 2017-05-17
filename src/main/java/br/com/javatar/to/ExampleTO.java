@@ -3,7 +3,7 @@ package br.com.javatar.to;
 import org.apache.commons.lang.StringUtils;
 
 import java.math.BigDecimal;
-import java.sql.Date;
+import java.util.Date;
 
 import static org.apache.commons.lang.StringUtils.isEmpty;
 import static org.apache.commons.lang.StringUtils.trimToEmpty;
